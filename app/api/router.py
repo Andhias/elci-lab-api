@@ -1,0 +1,10 @@
+from fastapi import APIRouter
+
+from app.api.routes import auth, chat, health, search, voice
+
+api_router = APIRouter()
+api_router.include_router(health.router)
+api_router.include_router(auth.router)
+api_router.include_router(search.router)
+api_router.include_router(chat.router)
+api_router.include_router(voice.router)
